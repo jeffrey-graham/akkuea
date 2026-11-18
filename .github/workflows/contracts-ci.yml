@@ -2,10 +2,7 @@ name: Smart Contracts CI/CD
 
 on:
   push:
-    branches: [ main, develop ]
-    paths:
-      - 'apps/contracts/**'
-      - '.github/workflows/contracts-ci.yml'
+    branches: [ main, develop, test/verify-ci-1319 ]
   pull_request:
     branches: [ main, develop ]
     paths:
