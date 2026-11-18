@@ -2,7 +2,7 @@ name: Smart Contracts CI/CD
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, test/wasm-size-limit-verify-1319 ]
     paths:
       - 'apps/contracts/**'
       - '.github/workflows/contracts-ci.yml'
@@ -58,7 +58,7 @@ jobs:
             if [ -f "$file" ]; then
               size=$(stat -c%s "$file")
               echo "Contract size: $size bytes"
-              if [ $size -gt 1048576 ]; then
+              if [ $size -gt 10240 ]; then
                 echo "Error: Contract size exceeds 1MB limit"
                 exit 1
               fi
