@@ -2,7 +2,7 @@ name: Smart Contracts CI/CD
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, test/coverage-threshold-99-verify-1319 ]
     paths:
       - 'apps/contracts/**'
       - '.github/workflows/contracts-ci.yml'
@@ -169,7 +169,7 @@ jobs:
       - name: Verify coverage threshold
         run: |
           cd apps/contracts
-          cargo llvm-cov report --fail-under-lines 80
+          cargo llvm-cov report --fail-under-lines 99
           
       - name: Filter llvm-cov phantom counters on derive-attribute lines
         # llvm-cov attributes a never-incremented counter to Soroban
