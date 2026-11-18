@@ -16,3 +16,4 @@ itoa = "1.0"
 [dev-dependencies]
 soroban-sdk = { workspace = true, features = ["testutils"] }
 proptest = "1.11.0"
+nanorand = "=0.6.0"
